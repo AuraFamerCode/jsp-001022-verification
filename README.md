@@ -1,14 +1,38 @@
-# JSP-001022 — Independent Lean Verification Report
+# JSP-001022 — Reproduction Report for the Lean Formalization of Erdős Problem #1217
 
 **Problem:** JSP-001022 (Justin Sun Prize bank) = Erdős Problem **#1217** (ESS66 divisibility
 chains), resolved by **Theorem 1.6** of arXiv:2605.00301 (ABLLPSTT26).
 
-**What this repository is:** an *independent verification* of the existing Lean 4
-formalization at [`YuanheZ/Prim`](https://github.com/YuanheZ/Prim) (LeanMarathon,
-arXiv:2606.05400), performed on **2026-09-21** from a fresh clone with a from-scratch
-toolchain install. **This repo contains no Lean proof source and claims no authorship**
-of the formalization; it documents the rebuild, axiom audit, and `lean-verify` audit run,
-as public evidence for catalog submission.
+**What this repository is — and what it is not.** This is a **from-scratch reproduction** of
+the Lean 4 verification of [`YuanheZ/Prim`](https://github.com/YuanheZ/Prim) (LeanMarathon,
+arXiv:2606.05400), performed on **2026-09-21** by a third party with no affiliation to the
+formalization's authors. It is **self-published evidence**: the same account hosts this report
+and files the related catalog-correction issue, and nothing here can substitute for a reader's
+own check. That is exactly why the repository ships
+[`reproduce.sh`](reproduce.sh) — one command that performs the entire chain (pinned clone,
+hash check, build, axiom audit, `lean-verify` run) on your machine and prints
+`REPRODUCTION VERIFIED` only if every step passes. **Run it; do not take this report's word
+for anything.**
+
+**This repo contains no Lean proof source and claims no authorship** of the formalization.
+
+## Reproduce it yourself (the real test)
+
+```bash
+bash reproduce.sh          # ~15-30 min cold; ends with: REPRODUCTION VERIFIED
+```
+
+The script checks out the pinned commit, verifies `Main.lean`'s SHA-256
+(`8ca5eaef73ffacc9b6e350304a4b4c7e4ee9ec3dd3205af339df63d671ed7085`), builds
+(8,323 jobs), runs `#print axioms` on the three targets, sweeps for placeholders,
+and runs `audit.py`. A note for reproducerors: this repo's `lakefile.toml` has a
+broken default target (`defaultTargets = ["Prim"]` names no existing target, and the
+`LeanMarathon` library has no root-module file), so plain `lake build` fails — use the
+module-scoped `lake build +LeanMarathon.Main`, which is what `audit.py` itself runs.
+
+The full chain was re-executed from an empty directory on 2026-09-21 with the script;
+archived outputs: `verification/audit-run-bridges/result-fresh-20260921.json`,
+`verification/logs/axioms-fresh-20260921.out`, `verification/logs/lean-version-fresh-20260921.log`.
 
 ## Verified artifact
 
@@ -95,16 +119,20 @@ lake env lean Audit.lean
   (uniform-integrability / reverse Fatou) was confirmed through secondary mirrors only.
 - Statement faithfulness: high confidence. Line-by-line audit of the full proof DAG
   against the paper PDF was not performed.
-- Trust anchor: Lean kernel + Mathlib at the pinned versions; verification was performed
-  independently of the original repo's own claims.
+- Trust anchor: Lean kernel + Mathlib at the pinned versions. The runs documented here
+  were performed by the publishing account itself; they are **self-attestation, not
+  independent attestation** — the reproduction script above is the remedy, and any
+  maintainer or third party running it converts this into first-hand evidence.
 - The formalization authorship is LeanMarathon's (see arXiv:2606.05400); this repository
-  documents verification only.
+  documents reproduction only.
 
 ## Related upstream activity (context, 2026-09)
 
 - TheJustinSunPrize/awards PR #1286 (open): records `plby/lean-proofs` @ 8822f7d
   (`Erdos1217.lean`), proof committed 2026-09-15.
 - PRs #1074 (closed) / #2053 (open): record formalizations of Erdős Problem **#1196**
-  (primitive-set reciprocal sum) — a different statement from JSP-001022 (#1217).
+  (primitive-set reciprocal sum) — a different statement from JSP-001022 (#1217);
+  #1196 corresponds to catalog entry JSP-001001. JSP-001021 (the transitive subtournament
+  problem) is unrelated to this dispute and was never part of it.
 - PR #1723 (open): self-described as not a complete proof (numerical instances only).
 - Priority note: `YuanheZ/Prim` proof commit is dated **2026-06-04**.

@@ -1,0 +1,3 @@
+'erdos_sarkozy_szemeredi_1217' depends on axioms: [propext, Classical.choice, Quot.sound]
+'probabilistic_dense_ambient_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'dense_hits_subchain_in_set' depends on axioms: [propext, Classical.choice, Quot.sound]
