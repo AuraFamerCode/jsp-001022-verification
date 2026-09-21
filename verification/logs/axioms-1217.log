@@ -1,0 +1,18 @@
+erdos_sarkozy_szemeredi_1217 : ∀ (A : Set ℕ),
+  0 < upper_doubly_log_density A →
+    ∃ n,
+      strictly_increasing_divisibility_chain n ∧
+        chain_in_set n A ∧ upper_chain_density_at_least n (upper_doubly_log_density A)
+probabilistic_dense_ambient_chain : ∀ (A : Set ℕ),
+  0 < upper_doubly_log_density A →
+    ∃ n, strictly_increasing_divisibility_chain n ∧ chain_hits_density_at_least n A (upper_doubly_log_density A)
+dense_hits_subchain_in_set : ∀ (A : Set ℕ) (ambient : ℕ → ℕ),
+  0 < upper_doubly_log_density A →
+    strictly_increasing_divisibility_chain ambient →
+      chain_hits_density_at_least ambient A (upper_doubly_log_density A) →
+        ∃ n,
+          strictly_increasing_divisibility_chain n ∧
+            chain_in_set n A ∧ upper_chain_density_at_least n (upper_doubly_log_density A)
+'erdos_sarkozy_szemeredi_1217' depends on axioms: [propext, Classical.choice, Quot.sound]
+'probabilistic_dense_ambient_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'dense_hits_subchain_in_set' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,183 @@
+{
+  "scope": "target_checks_only",
+  "semantic_verdict": "not_determined",
+  "preflight": {
+    "ready_for_target_checks": true,
+    "issues": [],
+    "head": "a303f6bd23bb8f29a833d1d70327528359180995",
+    "git_status": "",
+    "toolchain_file": "leanprover/lean4:v4.30.0-rc2",
+    "file_sha256": {
+      "LeanMarathon/Main.lean": "8ca5eaef73ffacc9b6e350304a4b4c7e4ee9ec3dd3205af339df63d671ed7085",
+      "lake-manifest.json": "3dbdf1b94432f7a015e461ee98127df2920b6f575556c030285e11fec62d3b85",
+      "lakefile.lean": null,
+      "lakefile.toml": "a3437c4a2f6065a7657851da67076470668d98e7eb470cbb04ad6c556d686703",
+      "lean-toolchain": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61"
+    },
+    "manual_preconditions": [
+      "isolation and resource limits established",
+      "clean source build and trusted cache provenance recorded",
+      "actual dependency SHAs match fixed evidence",
+      "tool binaries are trusted and match the pinned toolchain",
+      "all untracked inputs and module/source mappings reviewed"
+    ],
+    "checker_compatibility": "not_probed; inspect pinned checker separately"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/tmp/jsp1022/elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lake",
+        "--version"
+      ],
+      "cwd": "/private/tmp/jsp1022/Prim",
+      "log": "/private/tmp/jsp1022/audit/run-thm/version-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.349,
+      "log_sha256": "9843b01c88032953b98a40e03080b7be8ed4a38b5f0dc953f1a1bc300b20459e"
+    },
+    {
+      "argv": [
+        "/tmp/jsp1022/elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "/private/tmp/jsp1022/Prim",
+      "log": "/private/tmp/jsp1022/audit/run-thm/version-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 4.464,
+      "log_sha256": "6b38d6160c0223bc189f88caad3d56588b06ca7af2b81d19cb4dbcef5024f387"
+    },
+    {
+      "argv": [
+        "/tmp/jsp1022/elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lake",
+        "build",
+        "+LeanMarathon.Main"
+      ],
+      "cwd": "/private/tmp/jsp1022/Prim",
+      "log": "/private/tmp/jsp1022/audit/run-thm/0000-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 3.574,
+      "log_sha256": "3e3c9ff515648fc6cd4e7d6e2f516d7fd291f85b31ba1f337465c4217c939700"
+    },
+    {
+      "argv": [
+        "/tmp/jsp1022/elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lake",
+        "env",
+        "lean",
+        "/private/tmp/jsp1022/Prim/LeanMarathon/Main.lean"
+      ],
+      "cwd": "/private/tmp/jsp1022/Prim",
+      "log": "/private/tmp/jsp1022/audit/run-thm/0000-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 101.115,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/tmp/jsp1022/elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lake",
+        "env",
+        "lean",
+        "/private/tmp/jsp1022/audit/run-thm/Audit0000.lean"
+      ],
+      "cwd": "/private/tmp/jsp1022/Prim",
+      "log": "/private/tmp/jsp1022/audit/run-thm/0000-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 74.468,
+      "log_sha256": "e97cb05ea9bd4d8b233a5cc88c4cd178639209a873a1a358b4cd4fe68b307ae3"
+    }
+  ],
+  "targets": [
+    {
+      "id": "thm-1217",
+      "declaration": "erdos_sarkozy_szemeredi_1217",
+      "audit_file": "/private/tmp/jsp1022/audit/run-thm/Audit0000.lean",
+      "audit_sha256": "0c0b68dad44febb1c511e8915d5032790ce3f12e15c3dada4e903d5991e3df65",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/tmp/jsp1022/elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lake",
+            "build",
+            "+LeanMarathon.Main"
+          ],
+          "cwd": "/private/tmp/jsp1022/Prim",
+          "log": "/private/tmp/jsp1022/audit/run-thm/0000-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 3.574,
+          "log_sha256": "3e3c9ff515648fc6cd4e7d6e2f516d7fd291f85b31ba1f337465c4217c939700"
+        },
+        {
+          "argv": [
+            "/tmp/jsp1022/elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lake",
+            "env",
+            "lean",
+            "/private/tmp/jsp1022/Prim/LeanMarathon/Main.lean"
+          ],
+          "cwd": "/private/tmp/jsp1022/Prim",
+          "log": "/private/tmp/jsp1022/audit/run-thm/0000-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 101.115,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/tmp/jsp1022/elan/toolchains/leanprover--lean4---v4.30.0-rc2/bin/lake",
+            "env",
+            "lean",
+            "/private/tmp/jsp1022/audit/run-thm/Audit0000.lean"
+          ],
+          "cwd": "/private/tmp/jsp1022/Prim",
+          "log": "/private/tmp/jsp1022/audit/run-thm/0000-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 74.468,
+          "log_sha256": "e97cb05ea9bd4d8b233a5cc88c4cd178639209a873a1a358b4cd4fe68b307ae3"
+        }
+      ]
+    }
+  ],
+  "mechanical_status": "standard_axioms_only",
+  "tool_versions": [
+    "Lake version 5.0.0-src+3dc1a08 (Lean version 4.30.0-rc2)\n",
+    "Lean (version 4.30.0-rc2, arm64-apple-darwin24.6.0, commit 3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc, Release)\n"
+  ],
+  "after": {
+    "ready_for_target_checks": true,
+    "issues": [],
+    "head": "a303f6bd23bb8f29a833d1d70327528359180995",
+    "git_status": "",
+    "toolchain_file": "leanprover/lean4:v4.30.0-rc2",
+    "file_sha256": {
+      "LeanMarathon/Main.lean": "8ca5eaef73ffacc9b6e350304a4b4c7e4ee9ec3dd3205af339df63d671ed7085",
+      "lake-manifest.json": "3dbdf1b94432f7a015e461ee98127df2920b6f575556c030285e11fec62d3b85",
+      "lakefile.lean": null,
+      "lakefile.toml": "a3437c4a2f6065a7657851da67076470668d98e7eb470cbb04ad6c556d686703",
+      "lean-toolchain": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61"
+    },
+    "manual_preconditions": [
+      "isolation and resource limits established",
+      "clean source build and trusted cache provenance recorded",
+      "actual dependency SHAs match fixed evidence",
+      "tool binaries are trusted and match the pinned toolchain",
+      "all untracked inputs and module/source mappings reviewed"
+    ],
+    "checker_compatibility": "not_probed; inspect pinned checker separately"
+  },
+  "inputs_stable": true,
+  "manifest_sha256": "4e7e171f6991d8b82a79b7bd4c4dd3a18429753bcdab47d1e2b51e5764a8ebff",
+  "script_sha256": "5db45dddcb4d588bc27e7c7161fbca5cedaa3e73e1c40843d21f5a214323cd07",
+  "exit_code": 0
+}
